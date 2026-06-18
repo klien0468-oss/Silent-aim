@@ -12,7 +12,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
     Name = "Tập làm scprit aim¨",
     Icon = 0,
-    LoadingTitle = "Carregando Hub...",
+    LoadingTitle = "Tập làm script Hub...",
     LoadingSubtitle = "by tls",
     Theme = "Default",
     ConfigurationSaving = { Enabled = true, FolderName = "MeuSuperHub", FileName = "Configuracoes" },
@@ -197,32 +197,32 @@ local InfoTab = Window:CreateTab("â„¹ï¸ InformaĂ§Ăµes", 4483362458)
 
 -- Aba ESP
 EspTab:CreateSection("Controle Visual")
-EspTab:CreateToggle({Name = "Ativar ESP Completo", CurrentValue = espEnabled, Flag = "ToggleESP", Callback = function(v) espEnabled = v if not v then clearDrawings() end end})
-EspTab:CreateToggle({Name = "Caixa 3D (Box ESP)", CurrentValue = boxEspEnabled, Flag = "ToggleBoxESP", Callback = function(v) boxEspEnabled = v end})
-EspTab:CreateToggle({Name = "Linhas (Tracers)", CurrentValue = tracerEnabled, Flag = "ToggleTracers", Callback = function(v) tracerEnabled = v end})
-EspTab:CreateToggle({Name = "Barra de Vida", CurrentValue = healthBarEnabled, Flag = "ToggleHealthBar", Callback = function(v) healthBarEnabled = v end})
-EspTab:CreateToggle({Name = "Nome do Jogador", CurrentValue = nameEspEnabled, Flag = "ToggleNameESP", Callback = function(v) nameEspEnabled = v end})
+EspTab:CreateToggle({Name = "Kích hoạt tính năng ESP đầy đủ, CurrentValue = espEnabled, Flag = "ToggleESP", Callback = function(v) espEnabled = v if not v then clearDrawings() end end})
+EspTab:CreateToggle({Name = "Hộp 3D (Box ESP)", CurrentValue = boxEspEnabled, Flag = "ToggleBoxESP", Callback = function(v) boxEspEnabled = v end})
+EspTab:CreateToggle({Name = "Đường kẻ (Đường dò)", CurrentValue = tracerEnabled, Flag = "ToggleTracers", Callback = function(v) tracerEnabled = v end})
+EspTab:CreateToggle({Name = "Thanh cột sống", CurrentValue = healthBarEnabled, Flag = "ToggleHealthBar", Callback = function(v) healthBarEnabled = v end})
+EspTab:CreateToggle({Name = "Tên người chơi", CurrentValue = nameEspEnabled, Flag = "ToggleNameESP", Callback = function(v) nameEspEnabled = v end})
 
 -- Aba Aimbot (agora sem tecla)
 AimbotTab:CreateSection("Controle de Mira (AutomĂ¡tico)")
-AimbotTab:CreateToggle({Name = "Ativar Aimbot (sempre ativo)", CurrentValue = aimbotEnabled, Flag = "ToggleAimbot", Callback = function(v) aimbotEnabled = v end})
-AimbotTab:CreateSlider({Name = "Ă‚ngulo de Mira (FOV em graus)", Range = {10, 120}, Increment = 5, Suffix = "Â°", CurrentValue = aimFOV, Flag = "AimbotFOV", Callback = function(v) aimFOV = v end})
-AimbotTab:CreateSlider({Name = "Suavidade (Smoothing)", Range = {0.1, 1}, Increment = 0.05, Suffix = "", CurrentValue = aimSmoothness, Flag = "AimbotSmoothness", Callback = function(v) aimSmoothness = v end})
-AimbotTab:CreateDropdown({Name = "Parte do Corpo", Options = {"CabeĂ§a", "Tronco"}, CurrentOption = "CabeĂ§a", Flag = "AimbotPart", Callback = function(opt)
+AimbotTab:CreateToggle({Name = "Bật Aimbot (luôn bật)", CurrentValue = aimbotEnabled, Flag = "ToggleAimbot", Callback = function(v) aimbotEnabled = v end})
+AimbotTab:CreateSlider({Name = "Góc ngắm (FOV tính bằng độ)", Range = {10, 120}, Increment = 5, Suffix = "Â°", CurrentValue = aimFOV, Flag = "AimbotFOV", Callback = function(v) aimFOV = v end})
+AimbotTab:CreateSlider({Name = "Độ mịn", Range = {0.1, 1}, Increment = 0.05, Suffix = "", CurrentValue = aimSmoothness, Flag = "AimbotSmoothness", Callback = function(v) aimSmoothness = v end})
+AimbotTab:CreateDropdown({Name = "Một phần cơ thể", Options = {"CabeĂ§a", "Tronco"}, CurrentOption = "CabeĂ§a", Flag = "AimbotPart", Callback = function(opt)
     aimPart = (opt == "CabeĂ§a" and "Head") or "HumanoidRootPart"
 end})
-AimbotTab:CreateToggle({Name = "Mostrar CĂ­rculo de Mira (FOV)", CurrentValue = fovCircleEnabled, Flag = "ToggleFOVCircle", Callback = function(v) fovCircleEnabled = v end})
+AimbotTab:CreateToggle({Name = "Hiển thị trường nhìn (FOV)", CurrentValue = fovCircleEnabled, Flag = "ToggleFOVCircle", Callback = function(v) fovCircleEnabled = v end})
 
 -- Aba Info
 InfoTab:CreateSection("Sobre o Hub")
-InfoTab:CreateParagraph({Title = "âœ¨ Meu Super Hub âœ¨", Content = "VersĂ£o: 2.1 - Aimbot automĂ¡tico\n\n- Mira sempre ativa (sem apertar tecla)\n- Mira baseada no Ă¢ngulo da cĂ¢mera\n- CĂ­rculo FOV na tela\n- ESP completo"})
-InfoTab:CreateButton({Name = "âœ… Script Carregado!", Callback = function()
-    Rayfield:Notify({Title = "Hub Carregado", Content = "Aimbot automĂ¡tico ativo! Basta ligar o toggle.", Duration = 3})
+InfoTab:CreateParagraph({Title = "Menu aimbot", Content = "Verison: 1.0 - Tự động ngắm bắn\n\n- Chế độ ngắm luôn hoạt động (không cần mở ống kính)\n- Ngắm bắn dựa trên góc camera\n- Góc nhìn camera trên toàn màn hình\n- ESP đầy đủ"})
+InfoTab:CreateButton({Name = "Script Aimbot!", Callback = function()
+    Rayfield:Notify({Title = "Hub Tls", Content = "Chế độ ngắm bắn tự động đã được kích hoạt! Chỉ cần bật công tắc.", Duration = 3})
 end})
 
--- =============================== LOOP PRINCIPAL ===============================
+-- =============================== NGUYÊN LÝ VÒNG LẶP ===============================
 RunService.RenderStepped:Connect(function()
-    -- Desenha o cĂ­rculo FOV
+    -- Vẽ vòng tròn FOV.
     drawFOVCircle()
 
     if espEnabled then
